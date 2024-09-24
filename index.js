@@ -18,7 +18,7 @@ const port = process.env.PORT || 5144;
 
 
 app.use(cors({
-	origin: ['http://localhost:5173',],
+	origin: ['http://localhost:5173','https://alamin-electronics-nimagachi.netlify.app'],
 	credentials: true
 }));
 app.use(express.json());
@@ -622,8 +622,8 @@ async function run() {
 				total_amount: discountedPrice,
 				currency: 'BDT',
 				tran_id: TransID, // use unique tran_id for each api call
-				success_url: 'https://bikroyelectronics-server.vercel.app/payment/success',
-				fail_url: 'https://bikroyelectronics-server.vercel.app/payment/failed',
+				success_url: 'https://alamin-electronics-server-main.vercel.app/payment/success',
+				fail_url: 'https://alamin-electronics-server-main.vercel.app/payment/failed',
 				cancel_url: 'http://localhost:3030/cancel',
 				ipn_url: 'http://localhost:3030/ipn',
 				shipping_method: orders?.paymentMethod,
@@ -678,7 +678,7 @@ async function run() {
 
 					if(result?.acknowledged){
 
-						res.redirect("https://bikroyelectronics.web.app/payment/success")
+						res.redirect("https://alamin-electronics-nimagachi.netlify.app/payment/success")
 					}
 
 				}
@@ -691,7 +691,7 @@ async function run() {
 
 			app.post('/payment/failed', async (req, res) => {
 
-				res.redirect("https://bikroyelectronics.web.app/payment/failed")
+				res.redirect("https://alamin-electronics-nimagachi.netlify.app/payment/failed")
 
 
 			});
