@@ -18,7 +18,7 @@ const port = process.env.PORT || 5144;
 
 
 app.use(cors({
-	origin: ['http://localhost:5173','https://alamin-electronics-nimagachi.netlify.app'],
+	origin: ['http://localhost:5173','https://al-amin-watachandsunglassessbd.netlify.app'],
 	credentials: true
 }));
 app.use(express.json());
@@ -678,7 +678,7 @@ async function run() {
 
 					if(result?.acknowledged){
 
-						res.redirect("https://alamin-electronics-nimagachi.netlify.app/payment/success")
+						res.redirect("https://al-amin-watachandsunglassessbd.netlify.app/payment/success")
 					}
 
 				}
@@ -691,7 +691,7 @@ async function run() {
 
 			app.post('/payment/failed', async (req, res) => {
 
-				res.redirect("https://alamin-electronics-nimagachi.netlify.app/payment/failed")
+				res.redirect("https://al-amin-watachandsunglassessbd.netlify.app/payment/failed")
 
 
 			});
