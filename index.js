@@ -18,7 +18,7 @@ const port = process.env.PORT || 5144;
 
 
 app.use(cors({
-	origin: ['http://localhost:5173', 'https://bikroyelectronics.web.app'],
+	origin: ['http://localhost:5173',],
 	credentials: true
 }));
 app.use(express.json());
@@ -43,7 +43,6 @@ app.get("/", (req, res) => {
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
-// const uri = "mongodb+srv://mustafiz8260:BX58G1x7A189eFOO@bikroyelectroniscluster.9ujswdc.mongodb.net/?retryWrites=true&w=majority&appName=BikroyElectronisCluster";
 
 const uri = "mongodb+srv://amirhossainbc75:iBK6EbmxmMmqrgQi@cluster0.ps5uh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
@@ -603,7 +602,7 @@ async function run() {
 		})
 
 
-
+  
 
 		app.post("/SSL/orders", verifyToken, async (req, res) => {
 			const orders = req.body;
