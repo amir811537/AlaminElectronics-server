@@ -18,8 +18,12 @@ const port = process.env.PORT || 5144;
 
 
 app.use(cors({
-	origin: ['http://localhost:5173','https://al-amin-watachandsunglassessbd.netlify.app','https://alamin-electronics-main.vercel.app'],
-	credentials: true
+    origin: [
+        'http://localhost:5173',
+        'https://al-amin-watachandsunglassessbd.netlify.app',
+        'https://alamin-electronics-main.vercel.app' // Add this line
+    ],
+    credentials: true
 }));
 app.use(express.json());
 app.use(cookieParser());
@@ -36,6 +40,14 @@ const is_live = false //true for live, false for sandbox
 
 app.get("/", (req, res) => {
 	res.send("simple crud is running");
+});
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://alamin-electronics-main.vercel.app');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    next();
 });
 
 // amirhossainbc75
