@@ -18,7 +18,7 @@ const port = process.env.PORT || 5144;
 
 
 app.use(cors({
-	origin: ['http://localhost:5173','https://al-amin-watachandsunglassessbd.netlify.app'],
+	origin: ['http://localhost:5173','https://al-amin-watachandsunglassessbd.netlify.app','https://alamin-electronics-main.vercel.app'],
 	credentials: true
 }));
 app.use(express.json());
