@@ -20,7 +20,7 @@ const port = process.env.PORT || 5144;
 app.use(cors({
     origin: [
         'http://localhost:5173',
-        'https://al-amin-watachandsunglassessbd.netlify.app',
+        'https://optiwatchbd.netlify.app/',
         'https://alamin-electronics-main.vercel.app' // Add this line
     ],
     credentials: true
