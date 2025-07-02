@@ -20,11 +20,12 @@ const port = process.env.PORT || 5144;
 app.use(cors({
     origin: [
         'http://localhost:5173',
-        'https://optiwatchbd.netlify.app/',
-        'https://alamin-electronics-main.vercel.app' // Add this line
+        'https://optiwatchbd.netlify.app',
+        'https://alamin-electronics-main.vercel.app'
     ],
     credentials: true
 }));
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -37,6 +38,7 @@ const store_id = 'mycom66d0151478e40'
 const store_passwd = 'mycom66d0151478e40@ssl'
 const is_live = false //true for live, false for sandbox
 
+app.options('*', cors()); // enable pre-flight across-the-board
 
 app.get("/", (req, res) => {
 	res.send("simple crud is running");
